@@ -43,26 +43,47 @@
                 <img src="https://images.unsplash.com/photo-1634467435669-831f777a6432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80" alt="co2_img">
             </div>
         </div>
-
         <div class="flex flex-row justify-center gap-6 my-6 mx-10">
             <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="vehicleBtn">Vehicle</button>
             <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="publicBtn">Pulic Transport</button>
             <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="houseBtn">House</button>
-            <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="cityBtn">City</button>
+            <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="cityBtn">Food</button>
             <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="countryBtn">Country</button>
+        
         </div>
         <div>
             <!-- For vehicle -->
             <div class="border-double border-8 my-6 mx-6 min-h-min  flex flex-col justify-center items-center text-xl text-black font-semibold p-10 z-10 bg-white hidden" id="vehicle">
 
-                <div class="text-center text-4xl text-green-500 font-semibold mb-6">
+                <div class="text-center text-4xl text-green-500 font-semibold mb-6 hidden">
                     <h2>Calculator</h2>
                 </div>
                 <div class="flex flex-row gap-3 my-4">
                     <div class="w-1/2 text-center">
                         Vehicle: 
+                        
                     </div>
-                    <input type="text" placeholder="Type" class="border border-red-400 w-1/2 " id="vehicleType" >
+                    <select name="cars" id="cars" class="border border-red-400 w-1/2">
+                            <option value="SmallDieselCar">Small Diesel Car</option>
+                            <option value="MediumDieselCar">Medium Diesel Car</option>
+                            <option value="LargeDieselCar">Large Diesel Car</option>
+                            <option value="MediumHybridCar">Medium Hybrid Car</option>
+                            <option value="LargeHybridCar">Large Hybrid Car</option>
+                            <option value="MediumLPGCar">Medium LPG Car</option>
+                            <option value="LargeLPGCar">Large LPG Car</option>
+                            <option value="MediumCNGCar">Medium CNG Car</option>
+                            <option value="LargeCNGCar">Large CNG Car</option>
+                            <option value="SmallPetrolVan">Small Petrol/Gasoline Van</option>
+                            <option value="LargePetrolVan">Large Petrol/Gasoline Van</option>
+                            <option value="SmallDielselVan">Small Diesel Van</option>
+                            <option value="MediumDielselVan">Medium Diesel Van</option>
+                            <option value="LargeDielselVan">Large Diesel Van</option>
+                            <option value="LPGVan">LPG Van</option>
+                            <option value="CNGVan">CNG Van</option>
+                            <option value="SmallPetrolCar">Small Petrol/Gasoline Car</option>
+                            <option value="MediumPetrolCar">Medium Petrol/Gasoline Car</option>
+                            <option value="LargePetrolCar">Large Petrol/Gasoline Car</option>
+                        </select>
                 </div>
                 <div class="flex flex-row gap-3 my-4">
                     <div class="w-1/2 text-center">
@@ -89,7 +110,7 @@
                     <input type="text" placeholder="averageMileage" class="border border-red-400 w-1/2 " id="averageMileage" >
                 </div> 
                 <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
-                    Show Results
+                    <button onclick="car()">Show Results</button>
                 </div>          
             </div>
             <!-- for public Transport -->
@@ -99,30 +120,28 @@
                 </div>
                 <div class="flex flex-row gap-3 my-4">
                     <div class="w-1/2 text-center">
-                        Train: 
+                        Vehicle Type: 
                     </div>
-                    <input type="number" placeholder="Miles" class="border border-red-400 w-1/2 " id="tain" >
+                    <select name="transit" id="transit" class="border border-red-400 w-1/2">
+                        <option value="Taxi">Taxi</option>
+                        <option value="ClassicBus">Classic Bus</option>
+                        <option value="EcoBus">Eco Bus</option>
+                        <option value="Coach">Coach</option>
+                        <option value="NationalTrain">National Train</option>
+                        <option value="LightRail">Light Rail</option>
+                        <option value="Subway">Subway</option>
+                        <option value="FerryOnFoot">Ferry On Foot</option>
+                        <option value="FerryInCar">Ferry In Car</option>
+                    </select>
                 </div>
                 <div class="flex flex-row gap-3 my-4">
                     <div class="w-1/2 text-center">
-                        Bus: 
+                        Average Mileage: 
                     </div>
-                    <input type="number" placeholder="Miles" class="border border-red-400 w-1/2 " id="bus" >
-                </div>
-                <div class="flex flex-row gap-3 my-4">
-                    <div class="w-1/2 text-center">
-                        taxi: 
-                    </div>
-                    <input type="number" placeholder="Miles" class="border border-red-400 w-1/2 " id="taxi" >
-                </div>
-                <div class="flex flex-row gap-3 my-4">
-                    <div class="w-1/2 text-center">
-                        Ferry: 
-                    </div>
-                    <input type="number" placeholder="Miles" class="border border-red-400 w-1/2 " id="ferry" >
+                    <input type="number" placeholder="averageMileage" class="border border-red-400 w-1/2 " id="tdist" >
                 </div>
                 <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
-                    Show Results
+                    <button onclick="transit()"> Results</button>
                 </div>             
             </div>
             <!-- for house -->
@@ -146,16 +165,24 @@
                     <div class="w-1/2 text-center">
                         Electricity: 
                     </div>
-                    <input type="number" placeholder="kWh" class="border border-red-400 w-1/2 " id="electricity" >
+                    <select name="etype" id="etype" class="border border-red-400 w-1/2">
+                        <option value="Solar">Solar</option>
+                        <option value="Wind">Wind</option>
+                        <option value="HydroElectric">Hydro Electric</option>
+                        <option value="Biomass">Biomass</option>
+                        <option value="Geothermal">Geothermal</option>
+                        <option value="Tidal">Tidal</option>
+                    </select>
+                    
                 </div>
                 <div class="flex flex-row gap-3 my-4">
                     <div class="w-1/2 text-center">
-                        Gas: 
+                        Consumption(kWh): 
                     </div>
-                    <input type="number" placeholder="ccf" class="border border-red-400 w-1/2 " id="gas" >
+                    <input type="number" placeholder="ccf" class="border border-red-400 w-1/2 " id="edist" >
                 </div>
                 <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
-                    Show Results
+                    <button onclick="energy()">Results</button>
                 </div>         
             </div>
             <!--For the city-->
@@ -165,19 +192,29 @@
                 </div>
                 <div class="flex flex-row gap-3 my-4">
                     <div class="w-1/2 text-center">
-                        Country: 
+                        Food: 
                     </div>
-                    <input type="text" placeholder="Name" class="border border-red-400 w-1/2 " id="country_2" >
+                    <select name="ftype" id="ftype" class="border border-red-400 w-1/2">
+                        <option value="d">Drinks</option>
+                        <option value="ss">Snacks/Sugar</option>
+                        <option value="os">Oils/Spreads</option>
+                        <option value="f">Fruit</option>
+                        <option value="v">Vegetables</option>
+                        <option value="cb">Cereals/Breads</option>
+                        <option value="cfp">Chicken/Fish/Pork</option>
+                        <option value="d">Dairy</option>
+                        <option value="bl">Beef/Lamb</option>
+                    </select>
                 </div>
                 <div class="flex flex-row gap-3 my-4">
                     <div class="w-1/2 text-center">
-                        State: 
+                        Calories: 
                     </div>
-                    <input type="text" placeholder="State" class="border border-red-400 w-1/2 " id="state_2" >
+                    <input type="number" placeholder="0" class="border border-red-400 w-1/2 " id="cal" >
                 </div>
                 <!-- add some images like graphs or something from the machine learning. -->
                 <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
-                    Show Results
+                    <button onclick="food()">Show Results</button>
                 </div>  
             </div>
             <!--For the country-->
@@ -193,22 +230,23 @@
                 </div>
                 <!-- add some images like graphs or something from the machine learning. -->
                 <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
-                    Show Results
+                    <button onclick="countrybc()">Show Results</button>
                 </div>  
             </div>
             <div id="overlay"></div>
-        </div>
-        
-        
+        </div> 
     </main>
-    <div class="flex justify-center items-center p-10">
+    <div class="text-black flex justify-center items-center gap-6 p-10 mx-10">
+        <div class="w-1/2 text-center text-4xl text-gray-400 pt-10"><img src="https://controlequipment.com.au/wp-content/uploads/2016/01/CO2-in-clouds-900x450.jpg"><div class="text-gray-700 pt-10">carbon in kg <span id="cf">0</span></div></div>
+        <div class="w-1/2"><img src="https://img.freepik.com/free-vector/isolated-tree-white-background_1308-26130.jpg?w=2000" class="container w-10 h-10"><h1>Trees killed: <span id="treeKill" class="font-bold">0</span>
+            <div class="w-1/3"><h1>Comparison to other options: <span id="severity" class="font-bold">Neutral</span></h1></div>
 
+        </h1></div>
+    </div>
+    <div class="flex justify-center items-center p-10 mt-10">
         <iframe width="710" height="1300" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="https://calculator.carbonfootprint.com/calculator.aspx"></iframe>
     </div>
     
-          
-
-
     <script src="./script/script.js"></script>
     
 </body>
