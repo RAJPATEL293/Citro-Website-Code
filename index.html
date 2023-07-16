@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" class="css">
+</head>
+<body class="max-w-full max-h-screen p-0 m-0 dark:bg-white text-white">
+    
+    <nav class="mx-auto p-6 sticky top-0 z-10 bg-white">
+        <div class="flex items-center justify-between">
+                <div class="text-4xl text-teal-800 p-6 text-left">
+                    CO2 Emission calculator
+                </div>
+                <div class="flex flex-row-reverse text-gray-600 hover:text-black text-2xl gap-8">
+                    <button id="logIn" class="bg-yellow-800 p-4 text-white rounded-full">log-in</button>
+                    <button id="SignIn" class="bg-yellow-800 p-4 text-white rounded-full w-auto">Sign-in</button>
+                </div>
+        </div>    
+    </nav>
+
+    <div class="relative w-full h-full bg-contain bg-no-repeat bg-center bg-fixed backdrop-filter backdrop-opacity-50 flex justify-center", style="background-image: url('https://images.pexels.com/photos/9300644/pexels-photo-9300644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); min-height: 50vh; background-size: cover; background-attachment: fixed;">
+        <div class="absolute inset-0 backdrop:filter backdrop-blur-xl"></div>
+        <div class="text-sky-900 items-center border-solid border-white border-4 p-6 my-10 mx-10 backdrop-filter backdrop-blur-sm flex justify-center">
+            <p class= "text-center text-green-400 text-6xl font-bold ">
+            Carbon Emission Calculator
+        </p>
+        </div>
+    </div>
+    
+    <!-- For the caption and home page -->
+    <main>
+        <div class="flex flex-col-reverse min-h-min min-w-min items-center justify-center gap-8 p-6 sm:flex-row">
+            <div class="w-1/2">
+                <div class="max-w-md  text-4xl font-bold text-emerald-800">
+                    Reducing carbon Emission 
+                </div>
+                <spam class="text-center max-w-md text-4xl text-lime-500 font-semibold">A pathway to a sustainable future
+                    </spam>
+            </div>
+            <div class="w-1/2">
+                <img src="https://images.unsplash.com/photo-1634467435669-831f777a6432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80" alt="co2_img">
+            </div>
+        </div>
+        <div class="flex flex-row justify-center gap-6 my-6 mx-10">
+            <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="vehicleBtn">Vehicle</button>
+            <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="publicBtn">Pulic Transport</button>
+            <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="houseBtn">House</button>
+            <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="cityBtn">Food</button>
+            <button class="bg-yellow-300 text-lg text-lime-600 rounded-full p-4 font-medium" id="countryBtn">Country</button>
+        
+        </div>
+        <div>
+            <!-- For vehicle -->
+            <div class="border-double border-8 my-6 mx-6 min-h-min  flex flex-col justify-center items-center text-xl text-black font-semibold p-10 z-10 bg-white hidden" id="vehicle">
+
+                <div class="text-center text-4xl text-green-500 font-semibold mb-6 hidden">
+                    <h2>Calculator</h2>
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Vehicle: 
+                        
+                    </div>
+                    <select name="cars" id="cars" class="border border-red-400 w-1/2">
+                            <option value="SmallDieselCar">Small Diesel Car</option>
+                            <option value="MediumDieselCar">Medium Diesel Car</option>
+                            <option value="LargeDieselCar">Large Diesel Car</option>
+                            <option value="MediumHybridCar">Medium Hybrid Car</option>
+                            <option value="LargeHybridCar">Large Hybrid Car</option>
+                            <option value="MediumLPGCar">Medium LPG Car</option>
+                            <option value="LargeLPGCar">Large LPG Car</option>
+                            <option value="MediumCNGCar">Medium CNG Car</option>
+                            <option value="LargeCNGCar">Large CNG Car</option>
+                            <option value="SmallPetrolVan">Small Petrol/Gasoline Van</option>
+                            <option value="LargePetrolVan">Large Petrol/Gasoline Van</option>
+                            <option value="SmallDielselVan">Small Diesel Van</option>
+                            <option value="MediumDielselVan">Medium Diesel Van</option>
+                            <option value="LargeDielselVan">Large Diesel Van</option>
+                            <option value="LPGVan">LPG Van</option>
+                            <option value="CNGVan">CNG Van</option>
+                            <option value="SmallPetrolCar">Small Petrol/Gasoline Car</option>
+                            <option value="MediumPetrolCar">Medium Petrol/Gasoline Car</option>
+                            <option value="LargePetrolCar">Large Petrol/Gasoline Car</option>
+                        </select>
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Year Made: 
+                    </div>
+                    <input type="number" placeholder="Year" class="border border-red-400 w-1/2 " id="yearMade" >
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Maker: 
+                    </div>
+                    <input type="text" placeholder="Company" class="border border-red-400 w-1/2 " id="maker" >
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Model: 
+                    </div>
+                    <input type="text" placeholder="Name" class="border border-red-400 w-1/2 " id="model" >
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Average Mileage: 
+                    </div>
+                    <input type="text" placeholder="averageMileage" class="border border-red-400 w-1/2 " id="averageMileage" >
+                </div> 
+                <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
+                    <button onclick="car()">Show Results</button>
+                </div>          
+            </div>
+            <!-- for public Transport -->
+            <div class="border-double border-8 my-6 mx-6 min-h-min  flex flex-col justify-center items-center text-xl text-black font-semibold p-10 z-10 bg-white hidden" id="publicTransport">
+                <div class="text-center text-4xl text-green-500 font-semibold mb-6">
+                    <h2>Calculator</h2>
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Vehicle Type: 
+                    </div>
+                    <select name="transit" id="transit" class="border border-red-400 w-1/2">
+                        <option value="Taxi">Taxi</option>
+                        <option value="ClassicBus">Classic Bus</option>
+                        <option value="EcoBus">Eco Bus</option>
+                        <option value="Coach">Coach</option>
+                        <option value="NationalTrain">National Train</option>
+                        <option value="LightRail">Light Rail</option>
+                        <option value="Subway">Subway</option>
+                        <option value="FerryOnFoot">Ferry On Foot</option>
+                        <option value="FerryInCar">Ferry In Car</option>
+                    </select>
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Average Mileage: 
+                    </div>
+                    <input type="number" placeholder="averageMileage" class="border border-red-400 w-1/2 " id="tdist" >
+                </div>
+                <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
+                    <button onclick="transit()"> Results</button>
+                </div>             
+            </div>
+            <!-- for house -->
+            <div class="border-double border-8 my-6 mx-6 min-h-min  flex flex-col justify-center items-center text-xl text-black font-semibold p-10 z-10 bg-white hidden", id="house">
+                <div class="text-center text-4xl text-green-500 font-semibold mb-6">
+                    <h2>Calculator</h2>
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Country: 
+                    </div>
+                    <input type="text" placeholder="Name" class="border border-red-400 w-1/2 " id="country" >
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        State: 
+                    </div>
+                    <input type="text" placeholder="State" class="border border-red-400 w-1/2 " id="state" >
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Electricity: 
+                    </div>
+                    <select name="etype" id="etype" class="border border-red-400 w-1/2">
+                        <option value="Solar">Solar</option>
+                        <option value="Wind">Wind</option>
+                        <option value="HydroElectric">Hydro Electric</option>
+                        <option value="Biomass">Biomass</option>
+                        <option value="Geothermal">Geothermal</option>
+                        <option value="Tidal">Tidal</option>
+                    </select>
+                    
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Consumption(kWh): 
+                    </div>
+                    <input type="number" placeholder="ccf" class="border border-red-400 w-1/2 " id="edist" >
+                </div>
+                <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
+                    <button onclick="energy()">Results</button>
+                </div>         
+            </div>
+            <!--For the city-->
+            <div class="border-double border-8 my-6 mx-6 min-h-min  flex flex-col justify-center items-center text-xl text-black font-semibold p-10 z-10 bg-white hidden", id="city_block">
+                <div class="text-center text-4xl text-green-500 font-semibold mb-6">
+                    <h2>Calculator</h2>
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Food: 
+                    </div>
+                    <select name="ftype" id="ftype" class="border border-red-400 w-1/2">
+                        <option value="d">Drinks</option>
+                        <option value="ss">Snacks/Sugar</option>
+                        <option value="os">Oils/Spreads</option>
+                        <option value="f">Fruit</option>
+                        <option value="v">Vegetables</option>
+                        <option value="cb">Cereals/Breads</option>
+                        <option value="cfp">Chicken/Fish/Pork</option>
+                        <option value="d">Dairy</option>
+                        <option value="bl">Beef/Lamb</option>
+                    </select>
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Calories: 
+                    </div>
+                    <input type="number" placeholder="0" class="border border-red-400 w-1/2 " id="cal" >
+                </div>
+                <!-- add some images like graphs or something from the machine learning. -->
+                <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
+                    <button onclick="food()">Show Results</button>
+                </div>  
+            </div>
+            <!--For the country-->
+            <div class="border-double border-8 my-6 mx-6 min-h-min  flex flex-col justify-center items-center text-xl text-black font-semibold p-10 z-10 bg-white hidden", id="country_block">
+                <div class="text-center text-4xl text-green-500 font-semibold mb-6">
+                    <h2>Calculator</h2>
+                </div>
+                <div class="flex flex-row gap-3 my-4">
+                    <div class="w-1/2 text-center">
+                        Country: 
+                    </div>
+                    <input type="text" placeholder="Name" class="border border-red-400 w-1/2 " id="country_2_block" >
+                </div>
+                <!-- add some images like graphs or something from the machine learning. -->
+                <div class="bg-yellow-300 text-green-500 p-4 rounded-full ">
+                    <button onclick="countrybc()">Show Results</button>
+                </div>  
+            </div>
+            <div id="overlay"></div>
+        </div> 
+    </main>
+    <div class="text-black flex justify-center items-center gap-6 p-10 mx-10">
+        <div class="w-1/2 text-center text-4xl text-gray-400 pt-10"><img src="https://controlequipment.com.au/wp-content/uploads/2016/01/CO2-in-clouds-900x450.jpg"><div class="text-gray-700 pt-10">carbon in kg <span id="cf">0</span></div></div>
+        <div class="w-1/2"><img src="https://img.freepik.com/free-vector/isolated-tree-white-background_1308-26130.jpg?w=2000" class="container w-10 h-10"><h1>Trees killed: <span id="treeKill" class="font-bold">0</span>
+            <div class="w-1/3"><h1>Comparison to other options: <span id="severity" class="font-bold">Neutral</span></h1></div>
+
+        </h1></div>
+    </div>
+    <div class="flex justify-center items-center p-10 mt-10">
+        <iframe width="710" height="1300" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="https://calculator.carbonfootprint.com/calculator.aspx"></iframe>
+    </div>
+    
+    <script src="./script/script.js"></script>
+    
+</body>
+</html>
